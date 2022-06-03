@@ -21,10 +21,10 @@ requirements:
     - make
     - {{ compiler('cxx') }}
   host:
-    - qt
+    - qt-main
     - zlib
   run:
-    - qt
+    - qt-main
     - zlib
 
 test:
