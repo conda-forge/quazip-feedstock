@@ -24,6 +24,7 @@ requirements:
     - cmake
     - make
     - {{ compiler('cxx') }}
+    - {{ stdlib('c') }}
     - noqt6                          # [build_variant == "qt5"]
     - noqt5                          # [build_variant == "qt6"]
   host:
