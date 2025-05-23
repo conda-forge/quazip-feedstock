@@ -22,3 +22,5 @@ qt_main:
 - '5.15'
 target_platform:
 - linux-64
+zlib:
+- '1'
