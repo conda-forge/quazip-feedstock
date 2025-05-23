@@ -25,14 +25,10 @@ requirements:
     - make
     - {{ compiler('cxx') }}
     - {{ stdlib('c') }}
-    - noqt6                          # [build_variant == "qt5"]
-    - noqt5                          # [build_variant == "qt6"]
   host:
     - qt-main                        # [build_variant == "qt5"]
     - qt6-main                       # [build_variant == "qt6"]
-    # Compatible with 1.2 and 1.3
-    - zlib =1.2                      # [build_variant == "qt5"]
-    - zlib =1.3                      # [build_variant == "qt6"]
+    - zlib
 
 test:
   commands:
