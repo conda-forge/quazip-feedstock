@@ -183,5 +183,6 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@effigies](https://github.com/effigies/)
 * [@izahn](https://github.com/izahn/)
 
