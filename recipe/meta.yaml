@@ -1,8 +1,5 @@
 {% set name = "quazip" %}
 {% set version = "1.4" %}
-{% set build = 1 %}
-
-{% set build = build + 100 %}  # [build_variant == "qt6"]
 
 package:
   name: {{ name }}
@@ -13,8 +10,7 @@ source:
   sha256: 79633fd3a18e2d11a7d5c40c4c79c1786ba0c74b59ad752e8429746fe1781dd6
 
 build:
-  number: {{ build }}
-  string: "{{ build_variant }}_h{{ PKG_HASH }}_{{ build }}"
+  number: 1
   skip: true  # [win]
   run_exports:
     - {{ pin_subpackage('quazip', max_pin='x') }}
@@ -26,14 +22,12 @@ requirements:
     - {{ compiler('cxx') }}
     - {{ stdlib('c') }}
   host:
-    - qt-main                        # [build_variant == "qt5"]
-    - qt6-main                       # [build_variant == "qt6"]
+    - qt6-main
     - zlib
 
 test:
   commands:
-    - test -f $PREFIX/lib/libquazip1-qt5.so  # [linux and build_variant == "qt5"]
-    - test -f $PREFIX/lib/libquazip1-qt6.so  # [linux and build_variant == "qt6"]
+    - test -f $PREFIX/lib/libquazip1-qt6.so  # [linux]
 
 about:
   home: https://stachenov.github.io/quazip/
