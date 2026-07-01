@@ -1,5 +1,5 @@
 {% set name = "quazip" %}
-{% set version = "1.7.1" %}
+{% set version = "1.7.2" %}
 
 package:
   name: {{ name }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/stachenov/quazip/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: e3c7220e66d9f8024ef4aa98befb2592fea219a01736a400b07b11aa60964d02
+  sha256: 5240f4a3475648773ba10af8b0ebe549cbfc5d6de00470a517330a80068a4f78
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win]
   run_exports:
     - {{ pin_subpackage('quazip', max_pin='x') }}
